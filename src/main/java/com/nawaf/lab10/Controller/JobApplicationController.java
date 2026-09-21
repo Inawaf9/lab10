@@ -27,6 +27,8 @@ public class JobApplicationController {
 
         int applyCase = jobApplicationService.applyForJob(jobApplication);
 
+        if(applyCase == 1) return ResponseEntity.status(201).body(new ApiResponse("User not found"));
+
         return ResponseEntity.status(201).body(new ApiResponse("Apply For Job Successfully"));
     }
 
